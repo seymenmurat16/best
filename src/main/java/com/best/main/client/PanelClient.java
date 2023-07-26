@@ -21,8 +21,6 @@ import reactor.core.publisher.Mono;
 @Service
 public class PanelClient {
 
-  @Value("back-end.endpoint")
-  private String BASE_URL;
   private static final String GENERATE_TOKEN = "/v1/token/url";
   private static final String GET_HAVALE_ACCOUNTS = "/v1/accounts/havale/";
   private static final String GET_ACCOUNT_FOR_NEW_TRANSACTION = "/v1/accounts/newTransaction/";
@@ -35,8 +33,8 @@ public class PanelClient {
 
   private final WebClient webClient;
 
-  public PanelClient() {
-    this.webClient = WebClient.builder().baseUrl(BASE_URL).defaultHeader(HttpHeaders.ORIGIN, ORIGIN_NAME)
+  public PanelClient(@Value("${back-end.endpoint}") String baseUrl) {
+    this.webClient = WebClient.builder().baseUrl(baseUrl).defaultHeader(HttpHeaders.ORIGIN, ORIGIN_NAME)
         .build();
   }
 
