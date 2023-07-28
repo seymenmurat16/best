@@ -17,4 +17,5 @@ data class AccountDto(
         val maxAmount: BigDecimal,
         val createTime: LocalDateTime,
         val updateTime: LocalDateTime?,
+        val description: String?,
 )

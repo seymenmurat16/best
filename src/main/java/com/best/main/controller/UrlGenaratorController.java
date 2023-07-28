@@ -49,7 +49,7 @@ public class UrlGenaratorController {
   @PostMapping("/gs/fast")
   public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenTrendyolFast2(@RequestBody RequestGenerateToken request) {
     RequestGenerateTokenGeneral requestGenerateTokenGeneral = new RequestGenerateTokenGeneral(request.getUsername(), request.getName(), request.getClientsCash(),
-        1L, TransactionType.DEPOSIT, PaymentType.FAST);
+        2L, TransactionType.DEPOSIT, PaymentType.FAST);
     ResponseGenerateTokenThenReturnUrl response = panelClient.generateToken(requestGenerateTokenGeneral);
     return ResponseEntity.ok(response);
   }
@@ -57,7 +57,7 @@ public class UrlGenaratorController {
   @PostMapping("/gs/havale")
   public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenTrendyolHavale2(RequestGenerateToken request) {
     RequestGenerateTokenGeneral requestGenerateTokenGeneral = new RequestGenerateTokenGeneral(request.getUsername(), request.getName(), request.getClientsCash(),
-        1L, TransactionType.DEPOSIT, PaymentType.HAVALE);
+        2L, TransactionType.DEPOSIT, PaymentType.HAVALE);
     ResponseGenerateTokenThenReturnUrl response = panelClient.generateToken(requestGenerateTokenGeneral);
     return ResponseEntity.ok(response);
   }
@@ -65,7 +65,7 @@ public class UrlGenaratorController {
   @PostMapping("/gs/withdraw")
   public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenTrendyolWithdraw2(@RequestBody RequestGenerateToken request) {
     RequestGenerateTokenGeneral requestGenerateTokenGeneral = new RequestGenerateTokenGeneral(request.getUsername(), request.getName(), request.getClientsCash(),
-        1L, TransactionType.WITHDRAW, null);
+        2L, TransactionType.WITHDRAW, null);
     ResponseGenerateTokenThenReturnUrl response = panelClient.generateToken(requestGenerateTokenGeneral);
     return ResponseEntity.ok(response);
   }
@@ -74,7 +74,7 @@ public class UrlGenaratorController {
   @PostMapping("/fb/fast")
   public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenTrendyolFast3(@RequestBody RequestGenerateToken request) {
     RequestGenerateTokenGeneral requestGenerateTokenGeneral = new RequestGenerateTokenGeneral(request.getUsername(), request.getName(), request.getClientsCash(),
-        1L, TransactionType.DEPOSIT, PaymentType.FAST);
+        3L, TransactionType.DEPOSIT, PaymentType.FAST);
     ResponseGenerateTokenThenReturnUrl response = panelClient.generateToken(requestGenerateTokenGeneral);
     return ResponseEntity.ok(response);
   }
@@ -82,7 +82,7 @@ public class UrlGenaratorController {
   @PostMapping("/fb/havale")
   public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenTrendyolHavale3(@RequestBody RequestGenerateToken request) {
     RequestGenerateTokenGeneral requestGenerateTokenGeneral = new RequestGenerateTokenGeneral(request.getUsername(), request.getName(), request.getClientsCash(),
-        1L, TransactionType.DEPOSIT, PaymentType.HAVALE);
+        3L, TransactionType.DEPOSIT, PaymentType.HAVALE);
     ResponseGenerateTokenThenReturnUrl response = panelClient.generateToken(requestGenerateTokenGeneral);
     return ResponseEntity.ok(response);
   }
@@ -90,7 +90,7 @@ public class UrlGenaratorController {
   @PostMapping("/fb/withdraw")
   public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenTrendyolWithdraw3(@RequestBody RequestGenerateToken request) {
     RequestGenerateTokenGeneral requestGenerateTokenGeneral = new RequestGenerateTokenGeneral(request.getUsername(), request.getName(), request.getClientsCash(),
-        1L, TransactionType.WITHDRAW, null);
+        3L, TransactionType.WITHDRAW, null);
     ResponseGenerateTokenThenReturnUrl response = panelClient.generateToken(requestGenerateTokenGeneral);
     return ResponseEntity.ok(response);
   }
