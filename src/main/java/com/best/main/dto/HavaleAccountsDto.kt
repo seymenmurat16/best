@@ -11,4 +11,5 @@ data class HavaleAccountsDto(
         val holder: String,
         val minAmount: BigDecimal,
         val maxAmount: BigDecimal,
+        val description: String?,
 )
