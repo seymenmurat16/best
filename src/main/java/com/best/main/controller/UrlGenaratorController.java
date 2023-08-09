@@ -55,7 +55,7 @@ public class UrlGenaratorController {
   }
 
   @PostMapping("/gs/havale")
-  public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenTrendyolHavale2(RequestGenerateToken request) {
+  public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenTrendyolHavale2(@RequestBody RequestGenerateToken request) {
     RequestGenerateTokenGeneral requestGenerateTokenGeneral = new RequestGenerateTokenGeneral(request.getUsername(), request.getName(), request.getClientsCash(),
         2L, TransactionType.DEPOSIT, PaymentType.HAVALE);
     ResponseGenerateTokenThenReturnUrl response = panelClient.generateToken(requestGenerateTokenGeneral);
