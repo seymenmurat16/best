@@ -95,5 +95,29 @@ public class UrlGenaratorController {
     return ResponseEntity.ok(response);
   }
 
+  @PostMapping("/x1/fast")
+  public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenFirstEntegratedSiteFast(@RequestBody RequestGenerateToken request) {
+    RequestGenerateTokenGeneral requestGenerateTokenGeneral = new RequestGenerateTokenGeneral(request.getUsername(), request.getName(), request.getClientsCash(),
+        4L, TransactionType.DEPOSIT, PaymentType.FAST);
+    ResponseGenerateTokenThenReturnUrl response = panelClient.generateToken(requestGenerateTokenGeneral);
+    return ResponseEntity.ok(response);
+  }
+
+  @PostMapping("/x1/havale")
+  public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenFirstEntegratedSiteHavale(@RequestBody RequestGenerateToken request) {
+    RequestGenerateTokenGeneral requestGenerateTokenGeneral = new RequestGenerateTokenGeneral(request.getUsername(), request.getName(), request.getClientsCash(),
+        4L, TransactionType.DEPOSIT, PaymentType.HAVALE);
+    ResponseGenerateTokenThenReturnUrl response = panelClient.generateToken(requestGenerateTokenGeneral);
+    return ResponseEntity.ok(response);
+  }
+
+  @PostMapping("/x1/withdraw")
+  public ResponseEntity<ResponseGenerateTokenThenReturnUrl> generateTokenFirstEntegratedSiteWithdraw(@RequestBody RequestGenerateToken request) {
+    RequestGenerateTokenGeneral requestGenerateTokenGeneral = new RequestGenerateTokenGeneral(request.getUsername(), request.getName(), request.getClientsCash(),
+        4L, TransactionType.WITHDRAW, null);
+    ResponseGenerateTokenThenReturnUrl response = panelClient.generateToken(requestGenerateTokenGeneral);
+    return ResponseEntity.ok(response);
+  }
+
 
 }
